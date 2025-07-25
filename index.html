@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Anunay Shrivastava - Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to external CSS file -->
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
@@ -59,13 +60,11 @@
                     <span>2018-2021</span>
                     <p>Brought food and health brands to multiple cities, upscaled revenue 2x in first year. Award-winning marketing leader.</p>
                 </li>
-                <!-- Add other positions similarly -->
             </ul>
         </section>
 
         <section id="awards" class="container">
             <h2>Awards & Recognition</h2>
-            <!-- Awards Carousel -->
             <div class="carousel" id="awardsCarousel">
                 <div class="carousel-track">
                     <div class="carousel-item">
@@ -78,10 +77,9 @@
                         <p>Top 50/50 Global Marketing Leader, MADCON Dubai 2019</p>
                         <a href="https://twitter.com/AnunayIN/status/1210178283981000707" target="_blank">See on Twitter</a>
                     </div>
-                    <!-- Add more awards similarly -->
                 </div>
-                <button class="carousel-btn prev" onclick="moveCarousel('awardsCarousel', -1)">‹</button>
-                <button class="carousel-btn next" onclick="moveCarousel('awardsCarousel', 1)">›</button>
+                <button class="carousel-btn prev" aria-label="Previous Award" type="button">‹</button>
+                <button class="carousel-btn next" aria-label="Next Award" type="button">›</button>
             </div>
         </section>
 
@@ -93,46 +91,45 @@
             <p>Featured as one of the Most Dynamic Leaders To Watch in 2024. <a href="https://www.slideshare.net/slideshow/the-most-dynamic-leader-to-watch-in-2024-pdf/270290856" target="_blank">Read the article</a></p>
         </section>
 
-       <section id="recommendations" class="container">
-    <h2>LinkedIn Testimonials</h2>
-    <!-- LinkedIn Recommendations Carousel with Screenshots -->
-    <div class="carousel" id="recCarousel">
-        <div class="carousel-track">
-            <div class="carousel-item">
-                <a href="https://www.linkedin.com/in/anunay-s/" target="_blank" rel="noopener noreferrer">
-                    <img src="linkedin1.PNG" alt="LinkedIn Recommendation 1">
-                    <p>View this testimonial on LinkedIn</p>
-                </a>
+        <section id="recommendations" class="container">
+            <h2>LinkedIn Testimonials</h2>
+            <div class="carousel" id="recCarousel">
+                <div class="carousel-track">
+                    <div class="carousel-item">
+                        <a href="https://www.linkedin.com/in/anunay-s/" target="_blank" rel="noopener noreferrer">
+                            <img src="linkedin1.PNG" alt="LinkedIn Recommendation 1">
+                            <p>View this testimonial on LinkedIn</p>
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="https://www.linkedin.com/in/anunay-s/detail/recommendations/" target="_blank" rel="noopener noreferrer">
+                            <img src="linkedin2.PNG" alt="LinkedIn Recommendation 2">
+                            <p>View this testimonial on LinkedIn</p>
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="https://www.linkedin.com/in/anunay-s/detail/recommendations/" target="_blank" rel="noopener noreferrer">
+                            <img src="linkedin3.PNG" alt="LinkedIn Recommendation 3">
+                            <p>View this testimonial on LinkedIn</p>
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="https://www.linkedin.com/in/anunay-s/detail/recommendations/" target="_blank" rel="noopener noreferrer">
+                            <img src="linkedin4.jfif" alt="LinkedIn Recommendation 4">
+                            <p>View this testimonial on LinkedIn</p>
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="https://www.linkedin.com/in/anunay-s/detail/recommendations/" target="_blank" rel="noopener noreferrer">
+                            <img src="linkedin5.jfif" alt="LinkedIn Recommendation 5">
+                            <p>View this testimonial on LinkedIn</p>
+                        </a>
+                    </div>
+                </div>
+                <button class="carousel-btn prev" aria-label="Previous Testimonial" type="button">‹</button>
+                <button class="carousel-btn next" aria-label="Next Testimonial" type="button">›</button>
             </div>
-            <div class="carousel-item">
-                <a href="https://www.linkedin.com/in/anunay-s/detail/recommendations/" target="_blank" rel="noopener noreferrer">
-                    <img src="linkedin2.PNG" alt="LinkedIn Recommendation 2">
-                    <p>View this testimonial on LinkedIn</p>
-                </a>
-            </div>
-           <div class="carousel-item">
-                <a href="https://www.linkedin.com/in/anunay-s/detail/recommendations/" target="_blank" rel="noopener noreferrer">
-                    <img src="linkedin3.PNG" alt="LinkedIn Recommendation 3">
-                    <p>View this testimonial on LinkedIn</p>
-                </a>
-            </div>
-            <div class="carousel-item">
-                <a href="https://www.linkedin.com/in/anunay-s/detail/recommendations/" target="_blank" rel="noopener noreferrer">
-                    <img src="linkedin4.jfif" alt="LinkedIn Recommendation 4">
-                    <p>View this testimonial on LinkedIn</p>
-                </a>
-            </div>
-            <div class="carousel-item">
-                <a href="https://www.linkedin.com/in/anunay-s/detail/recommendations/" target="_blank" rel="noopener noreferrer">
-                    <img src="linkedin5.jfif" alt="LinkedIn Recommendation 5">
-                    <p>View this testimonial on LinkedIn</p>
-                </a>
-            </div>
-        </div>
-        <button class="carousel-btn prev" onclick="moveCarousel('recCarousel', -1)">‹</button>
-        <button class="carousel-btn next" onclick="moveCarousel('recCarousel', 1)">›</button>
-    </div>
-</section>
+        </section>
 
         <section id="podcast" class="container">
             <h2>Featured Podcast</h2>
@@ -156,22 +153,32 @@
     </footer>
 
     <script>
-    // Simple carousel function for horizontal carousels
-    function moveCarousel(id, dir) {
-        let carousel = document.getElementById(id);
-        let track = carousel.querySelector('.carousel-track');
-        let items = track.children.length;
-        let current = parseInt(track.getAttribute('data-current')) || 0;
-        current = (current + dir + items) % items;
-        track.style.transform = 'translateX(-' + (current * 320) + 'px)';
-        track.setAttribute('data-current', current);
-    }
-    // Set carousel width on load
-    window.onload = function() {
-        document.querySelectorAll('.carousel-track').forEach(track => {
-            track.setAttribute('data-current', 0);
-        });
-    };
+        // Carousel Functionality supporting 2 visible items at a time
+        function moveCarousel(id, dir) {
+            const carousel = document.getElementById(id);
+            const track = carousel.querySelector('.carousel-track');
+            const items = carousel.querySelectorAll('.carousel-item');
+            const visibleItemsCount = 2;
+            let current = parseInt(track.getAttribute('data-current')) || 0;
+
+            const maxIndex = Math.max(0, items.length - visibleItemsCount);
+            current = current + dir;
+
+            if (current < 0) current = maxIndex;
+            if (current > maxIndex) current = 0;
+
+            const itemWidth = items[0].offsetWidth;
+            const offset = current * itemWidth;
+
+            track.style.transform = 'translateX(-' + offset + 'px)';
+            track.setAttribute('data-current', current);
+        }
+
+        window.onload = function() {
+            document.querySelectorAll('.carousel-track').forEach(track => {
+                track.setAttribute('data-current', 0);
+            });
+        };
     </script>
 </body>
 </html>
