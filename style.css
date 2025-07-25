@@ -331,15 +331,17 @@ footer a:hover {
   justify-content: center;
 }
 .blog-thumbnails img {
-  width: 210px;
-  aspect-ratio: 16/9;
-  object-fit: cover;
+  width: 150px;          /* Reduce width for smaller thumbnails */
+  aspect-ratio: 16 / 9;  /* Maintain widescreen ratio */
+  object-fit: cover;     /* Crop or adjust image as needed */
   border-radius: 8px;
   box-shadow: 0 1px 8px rgba(80, 80, 130, 0.1);
-  transition: transform 0.18s;
+  transition: transform 0.2s ease;
+  margin-bottom: 12px;
 }
+
 .blog-thumbnails img:hover {
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 .youtube-channel-layout {
   display: flex;
