@@ -153,32 +153,37 @@
     </footer>
 
     <script>
-        // Carousel Functionality supporting 2 visible items at a time
-        function moveCarousel(id, dir) {
-            const carousel = document.getElementById(id);
-            const track = carousel.querySelector('.carousel-track');
-            const items = carousel.querySelectorAll('.carousel-item');
-            const visibleItemsCount = 2;
-            let current = parseInt(track.getAttribute('data-current')) || 0;
+      // Carousel Functionality supporting 2 visible items at a time
+document.querySelectorAll('.carousel').forEach(function (carousel) {
+    const track = carousel.querySelector('.carousel-track');
+    const items = carousel.querySelectorAll('.carousel-item');
+    const prevBtn = carousel.querySelector('.carousel-btn.prev');
+    const nextBtn = carousel.querySelector('.carousel-btn.next');
+    let currentIndex = 0;
+    const visibleItemsCount = 2;
+    const maxIndex = Math.max(0, items.length - visibleItemsCount);
 
-            const maxIndex = Math.max(0, items.length - visibleItemsCount);
-            current = current + dir;
+    function updateCarousel() {
+        const itemWidth = items[0].offsetWidth;
+        const offset = currentIndex * itemWidth;
+        track.style.transform = `translateX(-${offset}px)`;
+    }
 
-            if (current < 0) current = maxIndex;
-            if (current > maxIndex) current = 0;
+    prevBtn.addEventListener('click', () => {
+        currentIndex = currentIndex > 0 ? currentIndex - 1 : maxIndex;
+        updateCarousel();
+    });
 
-            const itemWidth = items[0].offsetWidth;
-            const offset = current * itemWidth;
+    nextBtn.addEventListener('click', () => {
+        currentIndex = currentIndex < maxIndex ? currentIndex + 1 : 0;
+        updateCarousel();
+    });
 
-            track.style.transform = 'translateX(-' + offset + 'px)';
-            track.setAttribute('data-current', current);
-        }
+    window.addEventListener("resize", updateCarousel);
 
-        window.onload = function() {
-            document.querySelectorAll('.carousel-track').forEach(track => {
-                track.setAttribute('data-current', 0);
-            });
-        };
+    // Initialize carousel position
+    updateCarousel();
+});
     </script>
 </body>
 </html>
