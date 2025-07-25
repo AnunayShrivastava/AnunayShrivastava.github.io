@@ -1,2 +1,2 @@
-# anunay.github.io
+# AnunayShrivastava.github.io
 Personal Portfolio
