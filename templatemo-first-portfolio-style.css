@@ -425,3 +425,13 @@ footer a:focus {
     max-height: 40vh;
   }
 }
+.bike-img {
+  max-height: 250px;         /* Limits vertical space taken by portrait image */
+  width: auto;               /* Maintains natural width for correct aspect ratio */
+  max-width: 100%;           /* Image will not overflow its container */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+}
