@@ -8,13 +8,93 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
   <link rel="icon" href="favicon.ico" />
+  <style>
+    /* Use a basic row flex for gallery sections, wrap naturally */
+    .gallery-row, .youtube-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.4rem;
+      margin-bottom: 1.2rem;
+    }
+    /* YouTube thumbnails, fixed aspect ratio and width, no scrolling */
+    .youtube-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 250px;
+      min-width: 220px;
+      max-width: 260px;
+    }
+    .youtube-item iframe {
+      width: 100%;
+      height: 141px; /* 16:9 aspect ratio at 250px wide */
+      border-radius: 12px;
+      box-shadow: 0 3px 14px rgba(0,0,0,0.12);
+      background: #f8f8f8;
+      margin-bottom: 1rem;
+    }
+    .youtube-item p {
+      font-weight: 600;
+      color: #0d6efd;
+      margin-bottom: 0.25rem;
+      font-size: 1rem;
+    }
+    @media (max-width: 666px) {
+      .youtube-row, .gallery-row {
+        flex-direction: column;
+        gap: 1.1rem;
+      }
+      .youtube-item, .gallery-row > * {
+        width: 98vw;
+        max-width: 98vw;
+      }
+    }
+
+    /* Instagram embed and image portrait style for biking and travel */
+    .gallery-row img,
+    .gallery-row blockquote.instagram-media {
+      width: 210px;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(30,40,90,0.12);
+      background: #f8f8f8;
+      margin: 0;
+      padding: 0;
+      min-width: 210px;
+      max-width: 210px;
+      min-height: 320px;
+      max-height: 320px;
+      overflow: hidden;
+      flex: 0 0 auto;
+    }
+    .gallery-row img:hover,
+    .gallery-row blockquote.instagram-media:hover {
+      transform: scale(1.04) rotate(-0.5deg);
+      box-shadow: 0 6px 22px rgba(13,110,253,0.22);
+    }
+    blockquote.instagram-media {
+      margin: 0 !important;
+      padding: 0 !important;
+      border-radius: 10px;
+      box-sizing: border-box;
+    }
+    .section-lead {
+      text-align: center;
+      color: #6c757d;
+      font-size: 1.08rem;
+      margin: .15rem 0 .9rem 0;
+      font-weight: 400;
+    }
+  </style>
 </head>
 <body>
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
     <div class="container">
       <a class="navbar-brand fw-bold" href="index.html">Anunay Shrivastava</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="mainNav">
@@ -25,67 +105,97 @@
         </ul>
         <ul class="navbar-nav ms-lg-3 gap-2 align-items-center">
           <li class="nav-item">
-            <a class="nav-link px-2" href="https://www.linkedin.com/in/anunay-s" target="_blank" title="LinkedIn"><i class="bi bi-linkedin fs-4"></i></a>
+            <a class="nav-link px-2" href="https://www.linkedin.com/in/anunay-s" target="_blank" title="LinkedIn" rel="noopener"><i class="bi bi-linkedin fs-4"></i></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link px-2" href="https://twitter.com/AnunayIN" target="_blank" title="Twitter"><i class="bi bi-twitter fs-4"></i></a>
+            <a class="nav-link px-2" href="https://twitter.com/AnunayIN" target="_blank" title="Twitter" rel="noopener"><i class="bi bi-twitter fs-4"></i></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link px-2" href="https://instagram.com/YOUR_INSTAGRAM_HERE" target="_blank" title="Instagram"><i class="bi bi-instagram fs-4"></i></a>
+            <a class="nav-link px-2" href="https://www.instagram.com/torquetales.in/" target="_blank" title="Instagram" rel="noopener"><i class="bi bi-instagram fs-4"></i></a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
+
   <main>
-    <!-- SHELL ECO-MARATHON HERO IMAGE -->
-    <section id="shell-eco-marathon-hero" class="text-center mt-5 pt-5 mb-4">
-      <!-- ADD YOUR SHELL ECO MARATHON HERO IMAGE BELOW -->
-      <img src="https://media.licdn.com/dms/image/v2/D5622AQFyE8EI75KoDw/feedshare-shrink_1280/feedshare-shrink_1280/0/1716801843697?e=1756339200&v=beta&t=liu7lLFcXPoKJOMtRNneNCwcaaENRVx5JhrOY4J220Q" alt="Shell Eco-Marathon Race Hero" class="img-fluid rounded shadow" style="max-width:100%;max-height:340px;object-fit:cover;" />
+    <!-- HERO IMAGE -->
+    <section class="text-center mt-5 pt-5 mb-4">
+      <img src="https://media.licdn.com/dms/image/v2/D5622AQFyE8EI75KoDw/feedshare-shrink_1280/feedshare-shrink_1280/0/1716801843697?e=1756339200&v=beta&t=liu7lLFcXPoKJOMtRNneNCwcaaENRVx5JhrOY4J220Q"
+           alt="Shell Eco-Marathon Race Hero" class="img-fluid rounded shadow" style="max-width:100%;max-height:340px;object-fit:cover;" />
     </section>
+
     <section class="container py-3">
+
+      <!-- YouTube Channels: thumbnails next to each other -->
       <div class="row mb-4">
-        <div class="col-lg-6 mb-3">
-          <h2 class="section-title">My YouTube Channels</h2>
-          <div>
-            <p class="fw-semibold">Business Channel: "Customer Success Insights"</p>
-            <iframe width="350" height="200" src="https://www.youtube.com/embed/ra0lizSq_5M"
-              title="CS Insights YouTube" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"
-              loading="lazy" class="rounded shadow mb-2"></iframe>
-            <p><a href="https://youtube.com/@customersuccessinsights" target="_blank" class="link-primary">Go to Channel</a></p>
+        <div class="col-12">
+          <h2 class="section-title text-center">My YouTube Channels</h2>
+          <div class="youtube-row">
+            <div class="youtube-item">
+              <iframe src="https://www.youtube.com/embed/ra0lizSq_5M"
+                title="CS Insights YouTube" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"
+                loading="lazy"></iframe>
+              <p>Business Channel: <br>"Customer Success Insights"</p>
+              <a href="https://www.youtube.com/@AsFarAsIKnowCSM" target="_blank" class="link-primary">Go to Channel</a>
+            </div>
+            <div class="youtube-item">
+              <iframe src="https://www.youtube.com/embed/6wqcLpJbxnM"
+                title="Gaming Channel" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"
+                loading="lazy"></iframe>
+              <p>Gaming Channel:<br>Atanosic Gaming</p>
+              <a href="https://www.youtube.com/@atanosicgaming5886" target="_blank" class="link-primary">Go to Channel</a>
+            </div>
           </div>
-          <div>
-            <p class="fw-semibold">Gaming Channel: Atanosic Gaming</p>
-            <iframe width="350" height="200" src="https://www.youtube.com/embed/6wqcLpJbxnM"
-              title="Gaming Channel" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"
-              loading="lazy" class="rounded shadow mb-2"></iframe>
-            <p><a href="https://youtube.com/YOUR_GAMING_CHANNEL" target="_blank" class="link-primary">Go to Channel</a></p>
-          </div>
-        </div>
-        <div class="col-lg-6 mb-3">
-          <h2 class="section-title">Bike & Riding Stories</h2>
-          <!-- ADD YOUR BIKE PAGE HERO IMAGE -->
-          <img src="https://media.licdn.com/dms/image/v2/D5622AQFHRqj4Y0JtvQ/feedshare-shrink_1280/feedshare-shrink_1280/0/1732947520077?e=1756339200&v=beta&t=6g6cu8XkrFZx2axFnrPIx66uC0_dIkDs0ToI9-Ekk5o" alt="Bike Page" class="bike-img mb-2" />
-          <p class="text-muted">On the road: racing, long distance riding and sharing stories from the saddle.</p>
-          <p><a href="https://www.instagram.com/torquetales.in/" target="_blank" class="link-primary">See Bike Stories</a></p>
         </div>
       </div>
+
+      <!-- Bike & Riding Stories: Instagram Embedded Posts as portrait thumbnails next to each other -->
       <div class="row mb-4">
-        <div class="col-lg-6 mb-3">
-          <h2 class="section-title">Travel Experiences</h2>
-          <!-- ADD YOUR TRAVEL IMAGE -->
-          <img src="https://media.licdn.com/dms/image/v2/D5622AQGNlgYVj6I-kg/feedshare-shrink_1280/B56ZchUvXaHUAk-/0/1748610774915?e=1756339200&v=beta&t=84NV89qIIyMyznNLqfVaFZc6-dfc4k_pjdhjbLhlT4w" alt="Travel" class="img-fluid rounded shadow mb-2" style="max-height:200px;">
-          <p class="text-muted">Snapshots and notes from countries and roads less traveled.</p>
+        <div class="col-12">
+          <h2 class="section-title text-center">Bike & Riding Stories</h2>
+          <div class="gallery-row mx-auto">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DE4VI0eRDx_/" data-instgrm-version="14"></blockquote>
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DK-tzN0TeON/" data-instgrm-version="14"></blockquote>
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DHYztuVSbmK/" data-instgrm-version="14"></blockquote>
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DGIb5CzSQGI/" data-instgrm-version="14"></blockquote>
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DF1IPqbzcXP/" data-instgrm-version="14"></blockquote>
+          </div>
+          <p class="section-lead">
+            On the road: racing, long distance riding, and sharing stories from the saddle.<br>
+            <a href="https://www.instagram.com/torquetales.in/" target="_blank" class="link-primary">See Bike Stories</a>
+          </p>
         </div>
-        <div class="col-lg-6 mb-3">
-          <h2 class="section-title">Side-Projects</h2>
-          <!-- PROJECT IMAGES -->
-          <img src="https://media.licdn.com/dms/image/v2/D5622AQFrPF6FM3stUQ/feedshare-shrink_1280/B56ZhAL7aeG4Ak-/0/1753423526426?e=1756339200&v=beta&t=YewAspZci7C7b9kfzGp7GmQmH-63GQSaLIe-ppaGTGM" alt="Project" class="img-fluid rounded shadow mb-2" style="max-height:200px;">
-          <p class="text-muted">Startups, product experiments and other project highlights.</p>
+      </div>
+
+      <!-- Travel Experiences: Portrait thumbnails next to each other -->
+      <div class="row mb-4">
+        <div class="col-12">
+          <h2 class="section-title text-center">Travel Experiences</h2>
+          <div class="gallery-row mx-auto">
+            <img src="https://media.licdn.com/dms/image/v2/D5622AQGNlgYVj6I-kg/feedshare-shrink_1280/B56ZchUvXaHUAk-/0/1748610774915?e=1756339200&v=beta&t=84NV89qIIyMyznNLqfVaFZc6-dfc4k_pjdhjbLhlT4w" alt="Travel Main"/>
+            <img src="https://media.licdn.com/dms/image/v2/D5622AQHr-2UEkx-6qg/feedshare-shrink_1280/B56Zd_xaR.HQAk-/0/1750195353696?e=1756339200&v=beta&t=UupUabir_db-otIy8CKfgcA3orwr4eKX-iHliFFyCDQ" alt="Travel to lakeside"/>
+            <img src="https://media.licdn.com/dms/image/v2/D5622AQHe7OwR9RAARA/feedshare-shrink_1280/feedshare-shrink_1280/0/1695543714545?e=1756339200&v=beta&t=rEntRNCGSw-h4RHjhtLCxDAepRCytf88aac-uW4NE9I0" alt="Exploring new destinations"/>
+            <img src="https://media.licdn.com/dms/image/v2/D5622AQGC8ahN0NRYjA/feedshare-shrink_1280/B56Zd_tn4RHUAo-/0/1750194363300?e=1756339200&v=beta&t=_1Zb5ix8kAOe7ZWlYutdFB1hNs8hUmUgmJ4h-pV5FFQ" alt="Backpacking trip"/>
+            <img src="https://media.licdn.com/dms/image/v2/D5622AQHxASQzQSQptA/feedshare-shrink_1280/B56ZchUvXTHoAk-/0/1748610774830?e=1756339200&v=beta&t=FX5AZdxtQ1-SQB3Fh5xN8z3Es1uDcEt3SSgwzqyNnOw" alt="Wilderness travel"/>
+          </div>
+          <p class="section-lead">
+            Snapshots and notes from countries and roads less traveled.
+          </p>
+        </div>
+      </div>
+
+      <!-- Side Projects -->
+      <div class="row mb-4">
+        <div class="col-12">
+          <h2 class="section-title text-center">Side-Projects</h2>
+          <img src="https://media.licdn.com/dms/image/v2/D5622AQFrPF6FM3stUQ/feedshare-shrink_1280/B56ZhAL7aeG4Ak-/0/1753423526426?e=1756339200&v=beta&t=YewAspZci7C7b9kfzGp7GmQmH-63GQSaLIe-ppaGTGM" alt="Project" class="img-fluid rounded shadow mb-2 mx-auto" style="max-height:200px;">
+          <p class="text-muted text-center">Startups, product experiments and other project highlights.</p>
         </div>
       </div>
     </section>
   </main>
+
   <footer class="bg-dark text-white py-4 mt-auto">
     <div class="container text-center">
       <p class="mb-1">© 2025 Anunay Shrivastava</p>
@@ -95,6 +205,9 @@
       </p>
     </div>
   </footer>
+
+  <!-- Instagram embed script -->
+  <script async src="//www.instagram.com/embed.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
