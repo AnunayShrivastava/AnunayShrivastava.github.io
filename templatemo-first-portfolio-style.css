@@ -1,0 +1,427 @@
+/* templatemo-first-portfolio-style.css */
+
+/* Import Google Font Montserrat - Already linked in HTML */
+
+/* Reset some default elements */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fefefe;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  /* Prevents content jump under sticky navbar */
+  scroll-padding-top: 76px;
+}
+
+a {
+  color: #0d6efd;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  color: #0a58ca;
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #212529;
+  position: relative;
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 60px;
+  height: 4px;
+  background-color: #0d6efd;
+  border-radius: 2px;
+  transform: translateX(-50%);
+}
+
+/* HERO SECTION (Full-width) */
+#hero {
+  min-height: 80vh;
+  background: none;
+  color: #fff;
+  padding: 0;
+  position: relative;
+  overflow-x: hidden;
+}
+
+#hero img {
+  width: 100vw;
+  min-height: 320px;
+  object-fit: cover;
+  /* Ensure hero always covers top of page */
+  display: block;
+}
+
+#hero .container.position-relative {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  margin-top: 0 !important;
+  height: 100%;
+  pointer-events: none; /* Let links/cta "catch" events */
+}
+
+#hero .container .row {
+  pointer-events: auto;
+}
+
+#hero .shadow-lg {
+  background: rgba(13,110,253,0.7);
+  box-shadow: 0 8px 36px 0 rgba(13,110,253,0.39),0 1.5px 6px 0 rgba(0,0,0,0.12);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 700px;
+  z-index: 5;
+}
+
+@media (max-width:960px) {
+  #hero .display-3 { font-size: 2.5rem; }
+}
+
+@media (max-width: 575px) {
+  #hero .shadow-lg { padding: 1.1rem 0.5rem !important; }
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #0d6efd;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: 0.375rem;
+  box-shadow: 0 4px 6px rgb(13 110 253 / 0.4);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #0a58ca;
+  box-shadow: 0 6px 10px rgb(10 88 202 / 0.6);
+  outline: none;
+  text-decoration: none;
+}
+
+.btn-primary i {
+  font-size: 1.25rem;
+}
+
+/* Navigation (sticky to top), highlight active */
+.navbar {
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+}
+
+.navbar .navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #0d6efd;
+}
+
+.navbar .nav-link {
+  color: #fff !important;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-link.active, 
+.navbar .nav-link:focus {
+  color: #0d6efd !important;
+  font-weight: 700;
+}
+
+.navbar .nav-link:hover {
+  color: #0d6efd !important;
+}
+
+.navbar .bi {
+  vertical-align: -0.15em;
+}
+
+@media (max-width: 576px) {
+  .navbar-nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/* Timeline in Experience */
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+  border-left: 3px solid #0d6efd;
+}
+
+.timeline li {
+  margin-bottom: 2rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.timeline li::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 8px;
+  width: 18px;
+  height: 18px;
+  background-color: #0d6efd;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 3px #0d6efd;
+}
+
+/* Carousel and Awards */
+.carousel-item img {
+  max-height: 320px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.carousel-item p {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  color: #212529;
+}
+
+.carousel-item a.link-primary {
+  font-weight: 600;
+}
+
+.carousel-inner {
+  min-height: 360px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1);
+}
+
+/* Testimonials Carousel */
+#recommendations .carousel-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+#recommendations .carousel-item {
+  flex: 0 0 auto;
+  max-width: 260px;
+}
+#recommendations img.img-thumbnail {
+  border-radius: 0.5rem;
+  max-height: 250px;
+  object-fit: contain;
+}
+
+/* Company logos */
+.company-logo {
+  max-height: 80px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+/* Podcast and Blog Sections */
+#podcast img,
+#magazine img,
+#blogs-podcasts img {
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+  max-width: 100%;
+  height: auto;
+}
+
+#magazine img {
+  max-height: 300px !important;
+  width: auto !important;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+}
+
+.blog-thumbnails {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+/* YouTube Channel embeds */
+.youtube-channel-layout {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.youtube-short iframe,
+.youtube-regulars iframe {
+  border-radius: 0.5rem;
+  box-shadow: 0 6px 12px rgb(0 0 0 / 0.15);
+  width: 100%;
+  height: 200px;
+  max-width: 350px;
+}
+
+.youtube-short {
+  max-width: 320px;
+  width: 100%;
+}
+
+.youtube-regulars {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Card style (homepage quick-cta cards) */
+.p-3.shadow.rounded.bg-light {
+  border: 1px solid #eef2fa;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 0.08) !important;
+}
+
+/* Footer */
+footer {
+  background-color: #212529;
+  color: #fff;
+  padding: 1.75rem 0;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin: 0.25rem 0;
+}
+
+footer a {
+  color: #0d6efd;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover,
+footer a:focus {
+  color: #0a58ca;
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  #hero .shadow-lg {
+    max-width: 95vw;
+  }
+}
+
+@media (max-width: 768px) {
+  #hero .profile-img {
+    max-width: 180px;
+    margin-bottom: 1.5rem;
+  }
+
+  .timeline {
+    padding-left: 1rem;
+    border-left-width: 2px;
+  }
+
+  .timeline li::before {
+    left: -7px;
+    width: 14px;
+    height: 14px;
+    border-width: 2px;
+  }
+
+  .youtube-short iframe,
+  .youtube-regulars iframe {
+    max-width: 100%;
+    height: 180px;
+  }
+
+  #recommendations .carousel-inner {
+    gap: 1rem;
+  }
+  #recommendations .carousel-item {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container { padding-left: 5px; padding-right: 5px; }
+  .section-title { font-size: 1.6rem; }
+}
+/* Fix homepage hero + title block overlap */
+#hero {
+  position: relative;
+  background: none;
+  color: #fff;
+  padding: 0;
+  min-height: 90vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+#hero img {
+  display: block;
+  width: 100vw;
+  min-height: 320px;
+  max-height: 65vh;
+  object-fit: cover;
+}
+.hero-title-block {
+  position: relative;
+  margin-top: -120px; /* Pulls the block up over the image for desktop */
+  z-index: 2;
+}
+@media (max-width: 991px) {
+  .hero-title-block {
+    margin-top: -90px;
+  }
+}
+@media (max-width: 768px) {
+  .hero-title-block {
+    margin-top: 10px !important; /* Removes overlap on mobile */
+    padding-bottom: 1rem;
+  }
+  #hero img {
+    max-height: 40vh;
+  }
+}
