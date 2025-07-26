@@ -80,10 +80,11 @@ img {
 
 #hero img {
   width: 100vw;
-  min-height: 320px;
-  object-fit: cover;
-  /* Ensure hero always covers top of page */
+  height: auto;            /* preserves aspect ratio */
+  max-height: 70vh;        /* limits vertical size on large screens */
+  object-fit: contain;     /* fits full image, no cropping */
   display: block;
+  margin: 0 auto;
 }
 
 #hero .container.position-relative {
@@ -408,19 +409,15 @@ footer a:focus {
 }
 .hero-title-block {
   position: relative;
-  margin-top: -120px; /* Pulls the block up over the image for desktop */
+  margin-top: -100px;   /* Desktop: pulls block up, adjust as needed */
   z-index: 2;
-}
-@media (max-width: 991px) {
-  .hero-title-block {
-    margin-top: -90px;
-  }
 }
 @media (max-width: 768px) {
   .hero-title-block {
-    margin-top: 10px !important; /* Removes overlap on mobile */
+    margin-top: 10px !important;  /* On mobile: no overlap */
     padding-bottom: 1rem;
   }
+}
   #hero img {
     max-height: 40vh;
   }
@@ -439,4 +436,8 @@ footer a:focus {
   .bike-img {
     max-height: 160px;
   }
+}
+body {
+  scroll-padding-top: 76px;  /* helps anchor links account for the nav */
+  padding-top: 76px;         /* pushes all page content below navbar */
 }
