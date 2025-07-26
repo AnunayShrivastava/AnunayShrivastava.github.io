@@ -354,3 +354,136 @@ main.container {
   margin-top: 0;
   padding-top: 0;
 }
+/* ---------------- Contribution Cards ---------------- */
+
+.contribution-card {
+  display: flex;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-bottom: 32px;
+  overflow: hidden;
+  align-items: stretch;
+  gap: 0;
+  flex-wrap: wrap;
+  transition: box-shadow 0.3s ease;
+}
+
+.contribution-card:hover {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.contribution-card.reverse {
+  flex-direction: row-reverse;
+}
+
+.contribution-media,
+.contribution-media-iframe {
+  flex: 0 0 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e8e8e8;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Remove underline on linked images and iframes */
+.contribution-media:hover,
+.contribution-media-iframe:hover {
+  filter: brightness(0.95);
+  transition: filter 0.3s ease;
+}
+
+.contribution-media img {
+  width: 230px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.07);
+  user-select: none;
+  pointer-events: none; /* so clicks go to link */
+}
+
+.contribution-media-iframe {
+  flex: 0 0 320px;
+  min-height: 180px;
+  padding: 0;
+  background: none;
+}
+
+.contribution-content {
+  flex: 1 1 0%;
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.contribution-content h5 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-weight: 700;
+  color: #222;
+}
+
+.contribution-content ul {
+  padding-left: 18px;
+  margin: 0;
+  color: #333;
+}
+
+.contribution-content li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+/* Responsive adjustments */
+
+@media (max-width: 900px) {
+  .contribution-card,
+  .contribution-card.reverse {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .contribution-media,
+  .contribution-media-iframe {
+    flex: none;
+    width: 100%;
+    justify-content: center;
+    padding: 18px 0 0 0;
+  }
+  .contribution-content {
+    padding: 18px 18px 22px 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contribution-media img {
+    width: 96vw;
+    max-width: 340px;
+    height: auto;
+  }
+  .contribution-media-iframe {
+    flex: none;
+    min-width: 0;
+    padding: 0;
+  }
+  .contribution-content {
+    padding: 15px 11px 20px 11px;
+    text-align: center;
+  }
+  .contribution-content h5,
+  .contribution-content ul,
+  .contribution-content li {
+    text-align: center;
+  }
+}
+
+/* Footer styling overrides if needed */
+footer a:hover {
+  text-decoration: underline;
+  color: #ff4d4d;
+}
