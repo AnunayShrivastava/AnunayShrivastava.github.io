@@ -119,67 +119,35 @@ body.homepage {
 
 /* Hero title block overlays image, always centered horizontally and vertically */
 .hero-title-block {
-  position: absolute;
-  top: 52%;                 /* Vertically centers title block a bit below mid-image */
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
+  z-index: 4;
   width: 55vw;
   min-width: 290px;
   max-width: 700px;
-  padding: 2.2rem 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -7vh; /* Overlaps bottom 10% of hero image */
   background: rgba(13,110,253,0.82);
   border-radius: 1rem;
-  box-shadow: 0 8px 36px 0 rgba(13,110,253,0.16),0 1.5px 6px 0 rgba(0,0,0,0.09);
+  box-shadow: 0 8px 36px 0 rgba(13,110,253,0.18),0 1.5px 6px 0 rgba(0,0,0,0.09);
   color: #fff;
   text-align: center;
-  margin: 0 auto;
-  z-index: 2;
+  padding: 2.2rem 2rem;
   backdrop-filter: blur(1px);
 }
-
-@media (max-width: 991px) {
-  #hero-image-wrapper {
-    height: 44vh;
-    min-height: 210px;
-  }
-  .hero-title-block {
-    width: 90vw;
-    top: 60%;
-    font-size: 1rem;
-    padding: 1.2rem 0.7rem 1.2rem 0.7rem;
-    border-radius: 0.8rem;
-  }
+@media (max-width: 1100px) {
+  .hero-title-block { width: 70vw; }
+}
+@media (max-width: 900px) {
+  .hero-title-block { width: 95vw; min-width: unset; margin-top: -4vh; }
 }
 @media (max-width: 600px) {
-  #hero-image-wrapper {
-    height: 28vh;
-    min-height: 130px;
-  }
-  .hero-title-block {
-    width: 98vw;
-    min-width: unset;
-    font-size: .93rem;
-    padding: 0.8rem 0.15rem 0.9rem 0.15rem;
-    border-radius: 0.6rem;
-    top: 70%;
-  }
-}
-@media (max-width: 600px) {
-  #hero-image-wrapper,
-  #hero img {
-    height: 33vh;
-    min-height: 130px;
-    max-height: 38vh;
-  }
   .hero-title-block {
     width: 99vw;
-    min-width: unset;
-    font-size: .94rem;
-    padding: 0.7rem 0.3rem .85rem 0.3rem;
+    font-size: .93rem;
+    padding: 0.7rem 0.15rem .85rem 0.15rem;
     border-radius: 0.6rem;
-    top: 23vh;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-top: -2.8vh;
   }
 }
 
@@ -381,4 +349,8 @@ footer a:focus {
 @media (max-width: 992px) {
   .container { padding-left: 5px; padding-right: 5px; }
   .section-title { font-size: 1.6rem; }
+}
+main.container {
+  margin-top: 0;
+  padding-top: 0;
 }
