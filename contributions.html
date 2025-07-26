@@ -4,9 +4,14 @@
   <meta charset="UTF-8" />
   <title>Contributions | Anunay Shrivastava</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="templatemo-first-portfolio-style.css" />
+  
+  <!-- Bootstrap CSS and Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css" />
+
   <link rel="icon" href="favicon.ico" />
 </head>
 <body>
@@ -14,79 +19,93 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
     <div class="container">
       <a class="navbar-brand fw-bold" href="index.html">Anunay Shrivastava</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto gap-2">
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link active" href="contributions.html">Contributions</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contributions.html" aria-current="page">Contributions</a></li>
           <li class="nav-item"><a class="nav-link" href="me-outside-work.html">Me Outside Work</a></li>
         </ul>
         <ul class="navbar-nav ms-lg-3 gap-2 align-items-center">
           <li class="nav-item">
-            <a class="nav-link px-2" href="https://www.linkedin.com/in/anunay-s" target="_blank" title="LinkedIn"><i class="bi bi-linkedin fs-4"></i></a>
+            <a class="nav-link px-2" href="https://www.linkedin.com/in/anunay-s" target="_blank" rel="noopener" title="LinkedIn"><i class="bi bi-linkedin fs-4"></i></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link px-2" href="https://twitter.com/AnunayIN" target="_blank" title="Twitter"><i class="bi bi-twitter fs-4"></i></a>
+            <a class="nav-link px-2" href="https://twitter.com/AnunayIN" target="_blank" rel="noopener" title="Twitter"><i class="bi bi-twitter fs-4"></i></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link px-2" href="https://instagram.com/torquetales.in" target="_blank" title="Instagram"><i class="bi bi-instagram fs-4"></i></a>
+            <a class="nav-link px-2" href="https://instagram.com/torquetales.in" target="_blank" rel="noopener" title="Instagram"><i class="bi bi-instagram fs-4"></i></a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-  <main>
+
+  <main class="pt-5">
     <section class="container py-5">
       <h2 class="section-title mb-4 text-center">Community Contributions</h2>
-      <div class="row align-items-center mb-5">
-        <div class="col-md-6 mb-3">
-          <h5 class="fw-bold">Community Building & Sessions</h5>
+
+      <!-- Community Building & Sessions -->
+      <div class="contribution-card">
+        <a href="https://www.linkedin.com/events/business-growth-panels/" target="_blank" rel="noopener" class="contribution-media" aria-label="Community Building Event Link">
+          <img src="https://media.licdn.com/dms/image/v2/D5622AQFwVv3EU0rX4w/feedshare-shrink_2048_1536/B56ZVW3LhPGsAw-/0/1740919088535?e=1756339200&v=beta&t=MUOd4S5Byt5fy7TX5x_U1Z-icKLZl3gEtd7W8DLJeQg" alt="Community session" />
+        </a>
+        <div class="contribution-content">
+          <h5>Community Building & Sessions</h5>
           <ul>
             <li>Organized business growth panels & community mentorships.</li>
             <li>Led sessions for new-age founders and students.</li>
-            <li>Speaker at campus & startup events.<br>
-            <!-- REPLACE below with your community event image(s) --><img src="https://media.licdn.com/dms/image/v2/D5622AQFwVv3EU0rX4w/feedshare-shrink_2048_1536/B56ZVW3LhPGsAw-/0/1740919088535?e=1756339200&v=beta&t=MUOd4S5Byt5fy7TX5x_U1Z-icKLZl3gEtd7W8DLJeQg" class="img-fluid rounded shadow mt-2" alt="Community session" style="max-height: 180px;" /></li>
-          </ul>
-        </div>
-        <div class="col-md-6 mb-3">
-          <h5 class="fw-bold">Podcast Host & Guest</h5>
-          <ul>
-            <li>Cofounder at <b>CSMTalks Podcast</b>: stories from sales and growth leaders.
-              <br>
-              <iframe width="320" height="180" src="https://www.youtube.com/embed/-R1gN5kf_Qc" title="CSMTalks Podcast" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" class="rounded shadow my-2"></iframe>
-              <!-- REPLACE with your podcast embed/YouTube -->
-            </li>
-            <li>Invited guest on business podcasts and live shows.</li>
-              <br>
-              <iframe width="320" height="180" src="https://www.youtube.com/embed/qA89DUCI6CI" title="CSMT Confedential" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" class="rounded shadow my-2"></iframe>
+            <li>Speaker at campus & startup events.</li>
           </ul>
         </div>
       </div>
-      <div class="row mb-5">
-        <div class="col-md-6 mb-3">
-          <h5 class="fw-bold">Mentorship</h5>
+
+      <!-- Podcast Host & Guest -->
+      <div class="contribution-card reverse">
+        <a href="https://www.youtube.com/channel/UCr4qLvptQ7uym__xM1z6jKA" target="_blank" rel="noopener" class="contribution-media-iframe d-flex flex-column align-items-center justify-content-center p-3" aria-label="CSMTalks Podcast Channel Link">
+          <iframe width="320" height="180" src="https://www.youtube.com/embed/-R1gN5kf_Qc" title="CSMTalks Podcast" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" class="rounded shadow my-2"></iframe>
+          <iframe width="320" height="180" src="https://www.youtube.com/embed/qA89DUCI6CI" title="CSMT Confedential" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" class="rounded shadow my-2"></iframe>
+        </a>
+        <div class="contribution-content">
+          <h5>Podcast Host & Guest</h5>
+          <ul>
+            <li>Cofounder at <b>CSMTalks Podcast</b>: stories from sales and growth leaders.</li>
+            <li>Invited guest on business podcasts and live shows.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Mentorship -->
+      <div class="contribution-card">
+        <a href="https://www.linkedin.com/posts/anunay-s_madcon2019-madcondubai-entrepreneurlife-activity-6615602640476831744-84dF?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAA2dUSUBCwe8_cYkXhZ2UvTT4kvJNCd6Vss" target="_blank" rel="noopener" class="contribution-media" aria-label="Mentorship Profile Link">
+          <img src="https://media.licdn.com/dms/image/v2/C5122AQExlbIIMKA1xg/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1577282577493?e=1756339200&v=beta&t=tOb5KGxVvFri5KglrLdeajZnPcVODrtmF3NpR9p_Rb8" alt="Mentorship" />
+        </a>
+        <div class="contribution-content">
+          <h5>Mentorship</h5>
           <ul>
             <li>Mentor for career transitions and startup launches in customer success, sales or strategy.</li>
-            <li>Panelist at university innovation events.
-              <br>
-            <img src="https://media.licdn.com/dms/image/v2/C5122AQExlbIIMKA1xg/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1577282577493?e=1756339200&v=beta&t=tOb5KGxVvFri5KglrLdeajZnPcVODrtmF3NpR9p_Rb8" class="img-fluid rounded shadow mt-2" alt="Speaking" style="max-height: 180px;" />
-         </li>
-              </ul>
+            <li>Panelist at university innovation events.</li>
+          </ul>
         </div>
-        <div class="col-md-6 mb-3">
-          <h5 class="fw-bold">Speaking & Panelist Roles</h5>
+      </div>
+
+      <!-- Speaking & Panelist Roles -->
+      <div class="contribution-card reverse">
+        <a href="https://www.youtube.com/watch?v=LhqcE1wFIdI&t=2123s" target="_blank" rel="noopener" class="contribution-media" aria-label="Speaking and Panelist Events Link">
+          <img src="https://media.licdn.com/dms/image/v2/D5622AQFKHF4BVgfipg/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1702846709043?e=1756339200&v=beta&t=kBvDR5BuQlvVu5hTCDJx9KXrKy_vcZnP1pIGxuJPERo" alt="Speaking" />
+        </a>
+        <div class="contribution-content">
+          <h5>Speaking & Panelist Roles</h5>
           <ul>
-            <li>Speaker/panelist at entrepreneur summits and sales communities.<br>
-              <!-- REPLACE below with your speaker/event/photo(s) -->
-              <img src="https://media.licdn.com/dms/image/v2/D5622AQFKHF4BVgfipg/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1702846709043?e=1756339200&v=beta&t=kBvDR5BuQlvVu5hTCDJx9KXrKy_vcZnP1pIGxuJPERo" class="img-fluid rounded shadow mt-2" alt="Speaking" style="max-height: 180px;" />
-            </li>
+            <li>Speaker/panelist at entrepreneur summits and sales communities.</li>
           </ul>
         </div>
       </div>
     </section>
   </main>
+
   <footer class="bg-dark text-white py-4 mt-auto">
     <div class="container text-center">
       <p class="mb-1">© 2025 Anunay Shrivastava</p>
@@ -96,6 +115,7 @@
       </p>
     </div>
   </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
