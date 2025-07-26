@@ -435,3 +435,8 @@ footer a:focus {
   border-radius: 0.5rem;
   box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
 }
+@media (max-width: 576px) {
+  .bike-img {
+    max-height: 160px;
+  }
+}
